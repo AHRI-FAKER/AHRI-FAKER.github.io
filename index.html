@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Motos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            animation: fadeIn 2s ease-out;
+        }
+        header {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 2px solid #333;
+            animation: slideDown 1.5s ease-out;
+        }
+        header h1 {
+            color: #f05454;
+            animation: bounceInLeft 1s ease-out;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 1rem 0;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            animation: fadeInUp 2s ease-out;
+        }
+        nav a:hover {
+            color: #f05454;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            opacity: 0;
+            animation: fadeInSection 2s forwards;
+        }
+        section h2 {
+            color: #f05454;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+            animation: bounceInRight 1s ease-out;
+        }
+        section img {
+            width: 100%;
+            height: auto;
+            margin-top: 1rem;
+            border-radius: 8px;
+            animation: zoomIn 1s ease-out;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #888;
+            border-top: 2px solid #444;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideDown {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes bounceInLeft {
+            0% { transform: translateX(-1000px); opacity: 0; }
+            60% { transform: translateX(30px); opacity: 1; }
+            80% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes bounceInRight {
+            0% { transform: translateX(1000px); opacity: 0; }
+            60% { transform: translateX(-30px); opacity: 1; }
+            80% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes fadeInSection {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Mejoras para el carrusel */
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-images img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            animation: fadeIn 2s ease-out;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+
+        /* Responsividad */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a la Página de Motos</h1>
+        <p>Descubre el mundo de las motos, sus características y novedades.</p>
+    </header>
+
+    <nav>
+        <a href="#motos-deportivas">Motos Deportivas</a>
+        <a href="#motos-clasicas">Motos Clásicas</a>
+        <a href="#novedades">Novedades</a>
+        <a href="#mantenimiento">Mantenimiento</a>
+        <a href="#accesorios">Accesorios</a>
+    </nav>
+
+    <div class="container">
+        <section id="motos-deportivas">
+            <h2>Motos Deportivas</h2>
+            <p>Las motos deportivas son rápidas y están diseñadas para la velocidad y el rendimiento. Son ideales para los amantes de la adrenalina y las carreras, gracias a su aerodinámica y potente motor.</p>
+            <p>Entre las motos deportivas más populares se encuentran:</p>
+            <ul>
+                <li><a href="https://www.yamaha-motor.eu" target="_blank">Yamaha YZF-R1</a></li>
+                <li><a href="https://powersports.honda.com" target="_blank">Honda CBR1000RR-R Fireblade</a></li>
+                <li><a href="https://www.kawasaki.com" target="_blank">Kawasaki Ninja ZX-10R</a></li>
+            </ul>
+            <div class="carousel">
+                <div class="carousel-images" id="deportivaCarousel">
+                    <img src="depor1.png" alt="Moto Deportiva 1">
+                    <img src="depor2.jpg" alt="Moto Deportiva 2">
+                    <img src="depor3.jpg" alt="Moto Deportiva 3">
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide(-1, 'deportivaCarousel')">❮</button>
+                <button class="carousel-button next" onclick="moveSlide(1, 'deportivaCarousel')">❯</button>
+            </div>
+        </section>
+
+        <section id="motos-clasicas">
+            <h2>Motos Clásicas</h2>
+            <p>Las motos clásicas son apreciadas por su estilo atemporal. Son ideales para los coleccionistas o aquellos que buscan una experiencia de conducción más relajada y tradicional.</p>
+            <p>Algunas de las motos clásicas más icónicas incluyen:</p>
+            <ul>
+                <li><a href="https://www.royalenfield.com" target="_blank">Royal Enfield Classic 500</a></li>
+                <li><a href="https://www.triumphmotorcycles.com" target="_blank">Triumph Bonneville T120</a></li>
+                <li><a href="https://www.bmw-motorrad.com" target="_blank">BMW R nineT</a></li>
+            </ul>
+            <div class="carousel">
+                <div class="carousel-images" id="clasicaCarousel">
+                    <img src="clasica1.png" alt="Moto Clásica 1">
+                    <img src="clasica2.jpg" alt="Moto Clásica 2">
+                    <img src="clasica3.jpg" alt="Moto Clásica 3">
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide(-1, 'clasicaCarousel')">❮</button>
+                <button class="carousel-button next" onclick="moveSlide(1, 'clasicaCarousel')">❯</button>
+            </div>
+        </section>
+
+        <section id="novedades">
+            <h2>Novedades</h2>
+            <p>El mundo de las motos está en constante evolución...</p>
+            <div class="carousel">
+                <div class="carousel-images" id="novedadesCarousel">
+                    <img src="nov1.jpg" alt="Novedad 1">
+                    <img src="nov2.jpg" alt="Novedad 2">
+                    <img src="nov3.jpeg" alt="Novedad 3">
+                </div>
+                <button class="carousel-button next" onclick="moveSlide(1, 'novedadesCarousel')">❯</button>
+            </div>
+        </section>
+
+        <section id="mantenimiento">
+            <h2>Mantenimiento</h2>
+            <p>El mantenimiento adecuado de una moto es clave para su durabilidad y rendimiento. Aquí encontrarás los mejores consejos para mantener tu moto en óptimas condiciones.</p>
+            <ul>
+                <li><a href="#">Cambio de aceite</a></li>
+                <img src="aceite.jpg" alt="aceite">
+                <li><a href="#">Revisión de frenos</a></li>
+                <img src="frenos.jpg" alt="revision">
+                <li><a href="#">Reemplazo de filtros</a></li>
+                <img src="filtro.jpg" alt="filtro">
+            </ul>
+        </section>
+
+        <section id="accesorios">
+            <h2>Accesorios</h2>
+            <p>Descubre los accesorios más populares para mejorar tu experiencia de conducción. Desde cascos hasta chaquetas, la seguridad y el estilo siempre van de la mano.</p>
+            <ul>
+                <li><a href="#">Cascos</a></li>
+                <img src="casco.jpg" alt="cascos">
+                <li><a href="#">Guantes</a></li>
+                <img src="guantes.jpg" alt="Guantes">
+                <li><a href="#">Chaquetas de protección</a></li>
+                <img src="chaqueta.jpg" alt="chaquetas">
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mundo de Motos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(direction, carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const totalSlides = carousel.children.length;
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            carousel.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+        }
+    </script>
+</body>
+</html>
+
